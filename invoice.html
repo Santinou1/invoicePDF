@@ -11,15 +11,17 @@
 <body>
     <div class="invoice" id="invoice">
         <header class="invoice-header">
-            <div class="logo">&</div>
+            <div class="logo">
+                <img src="descarga.png" alt="Logo" class="logo-image">
+            </div>
             <div class="invoice-title">
-                <h1>INVOICE</h1>
+                <h1>Corralon</h1>
                 <p id="invoiceNumberDate"></p>
             </div>
         </header>
         <section class="invoice-info">
             <div class="billed-to">
-                <strong>BILLED TO:</strong>
+                <strong>EMPRESA:</strong>
                 <p id="billedToInfo"></p>
             </div>
         </section>
@@ -27,9 +29,9 @@
             <table id="invoiceItemsTable">
                 <thead>
                     <tr>
-                        <th>Item</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
+                        <th>Productos</th>
+                        <th>Cantidad</th>
+                        <th>Precio Unitario</th>
                         <th>Total</th>
                     </tr>
                 </thead>
@@ -40,11 +42,9 @@
             </div>
         </section>
         <footer class="invoice-footer">
-            <p>Thank you!</p>
             <div class="payment-info" id="paymentInfo">
             </div>
         </footer>
-        <button id="downloadPdf" onclick="downloadPDF()">Download PDF</button>
     </div>
 
     <script src="invoiceScript.js"></script>
