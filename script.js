@@ -5,22 +5,47 @@ document.getElementById('invoiceForm').addEventListener('submit', function(event
 
 let itemIndex = 2;
 
+// Lista de productos
+const products = {
+    "001": { description: "Arena", unitPrice: 10000 },
+    "002": { description: "Cemento", unitPrice: 12000 },
+    // Agrega más productos aquí
+};
+
 function addItem() {
     const itemsDiv = document.getElementById('items');
     const newItemDiv = document.createElement('div');
     newItemDiv.className = 'item';
 
     newItemDiv.innerHTML = `
-        <label for="itemDescription${itemIndex}">Description</label>
+        <label for="itemCode${itemIndex}">Código del Producto</label>
+        <input type="text" id="itemCode${itemIndex}" name="itemCode${itemIndex}" oninput="autocompleteProduct(${itemIndex})" required>
+        <label for="itemDescription${itemIndex}">Producto</label>
         <input type="text" id="itemDescription${itemIndex}" name="itemDescription${itemIndex}" required>
-        <label for="itemQuantity${itemIndex}">Quantity</label>
+        <label for="itemQuantity${itemIndex}">Cantidad</label>
         <input type="number" id="itemQuantity${itemIndex}" name="itemQuantity${itemIndex}" required>
-        <label for="itemPrice${itemIndex}">Unit Price</label>
+        <label for="itemPrice${itemIndex}">Precio</label>
         <input type="number" id="itemPrice${itemIndex}" name="itemPrice${itemIndex}" required>
     `;
 
     itemsDiv.appendChild(newItemDiv);
     itemIndex++;
+}
+
+function autocompleteProduct(index) {
+    const codeInput = document.getElementById(`itemCode${index}`);
+    const descriptionInput = document.getElementById(`itemDescription${index}`);
+    const priceInput = document.getElementById(`itemPrice${index}`);
+
+    const product = products[codeInput.value];
+
+    if (product) {
+        descriptionInput.value = product.description;
+        priceInput.value = product.unitPrice;
+    } else {
+        descriptionInput.value = '';
+        priceInput.value = '';
+    }
 }
 
 function generateInvoice() {
