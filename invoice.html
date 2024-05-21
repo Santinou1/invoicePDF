@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="invoice" id="invoice">
+        <header class="invoice-header">
+            <div class="logo">&</div>
+            <div class="invoice-title">
+                <h1>INVOICE</h1>
+                <p id="invoiceNumberDate"></p>
+            </div>
+        </header>
+        <section class="invoice-info">
+            <div class="billed-to">
+                <strong>BILLED TO:</strong>
+                <p id="billedToInfo"></p>
+            </div>
+        </section>
+        <section class="invoice-details">
+            <table id="invoiceItemsTable">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="invoice-total" id="invoiceTotal">
+            </div>
+        </section>
+        <footer class="invoice-footer">
+            <p>Thank you!</p>
+            <div class="payment-info" id="paymentInfo">
+            </div>
+        </footer>
+        <button id="downloadPdf" onclick="downloadPDF()">Download PDF</button>
+    </div>
+
+    <script src="invoiceScript.js"></script>
+</body>
+</html>

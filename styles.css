@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.invoice, .form-container {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    border-radius: 8px;
+}
+
+.invoice-header, .invoice-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 50px;
+}
+
+.invoice-title h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.invoice-info, .invoice-details {
+    margin-top: 20px;
+}
+
+.invoice-details table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.invoice-details table th, .invoice-details table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.invoice-details table th {
+    background-color: #f2f2f2;
+}
+
+.invoice-total {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.invoice-total p {
+    margin: 0;
+}
+
+.total-amount {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.payment-info {
+    margin-top: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h1 {
+    text-align: center;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container label {
+    margin-top: 10px;
+}
+
+.form-container input, .form-container button {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-container button {
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+#items {
+    margin-top: 20px;
+}
+
+#items .item {
+    margin-bottom: 10px;
+}
