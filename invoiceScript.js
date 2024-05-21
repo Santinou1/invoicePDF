@@ -39,5 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 });
 
-
-
+function printInvoice() {
+    window.print();
+}
