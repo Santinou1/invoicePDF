@@ -18,6 +18,17 @@ body {
     border-radius: 8px;
 }
 
+
+
+.invoice-title {
+    text-align: center; /* Para centrar el contenido */
+}
+
+.invoice-heading {
+    font-size: 28px; /* Ajusta el tamaño del título según tus preferencias */
+}
+
+
 .invoice-header,
 .invoice-info,
 .invoice-details,

@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
 
     document.getElementById('paymentInfo').innerHTML = `
-        <strong>PAYMENT INFORMATION</strong>
-        <p>${invoice.accountName}<br>DNI.: ${invoice.accountNumber}<br>Fecha: ${invoice.paymentDue}</p>
+        <strong>INFORMACION DEL CLIENTE</strong>
+        <p> Nombre: ${invoice.accountName}<br><br>DNI.: ${invoice.accountNumber}<br><br>Fecha: ${invoice.paymentDue}</p>
         <p>${invoice.bankAddress}</p>
     `;
 });
