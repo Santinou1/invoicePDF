@@ -5,7 +5,6 @@ document.getElementById('invoiceForm').addEventListener('submit', function(event
 
 let itemIndex = 2;
 
-// Lista de productos
 const products = {
     "001": { description: "Arena", unitPrice: 10000 },
     "002": { description: "Cemento", unitPrice: 12000 },
@@ -74,6 +73,20 @@ function generateInvoice() {
         }
     }
 
-    localStorage.setItem('invoice', JSON.stringify(invoice));
-    window.location.href = 'invoice.html';
+    fetch('/generate-invoice', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(invoice)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Invoice generated:', data);
+        localStorage.setItem('invoice', JSON.stringify(data.invoiceData));
+        window.location.href = 'invoice.html';
+    })
+    .catch(error => {
+        console.error('Error generating invoice:', error);
+    });
 }
